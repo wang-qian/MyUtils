@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/LightParent">
+        <item name="title_text">@android:color/black</item>
+        <item name="body_text">#303030</item>
+        <item name="colorPrimary">?attr/theme_color</item>
+        <item name="colorPrimaryDark">?attr/theme_color_dark</item>
+        <item name="colorAccent">?attr/theme_accent_color</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+</resources>
