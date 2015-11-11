@@ -9,9 +9,9 @@ import android.view.WindowManager;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
-import wangqian.com.myutils.DeviceUtil;
+import wangqian.com.library.DeviceUtil;
+import wangqian.com.library.ThemeControl;
 import wangqian.com.myutils.R;
-import wangqian.com.myutils.ThemeControl;
 
 /**
  * WQ on 2015/11/10 14:43
@@ -35,6 +35,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 设置布局文件
+     *
      * @return
      */
     abstract int setLayout();
@@ -43,9 +44,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 设置toolbar替代actionBar
      */
-    private void initToolBar(){
+    private void initToolBar() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        if (mToolbar!=null){
+        if (mToolbar != null) {
             setSupportActionBar(mToolbar);
         }
     }
@@ -58,7 +59,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 19) {
             DeviceUtil.setTranslucentStatus(this, true);
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
             SystemBarTintManager tintManager = new SystemBarTintManager(this);
