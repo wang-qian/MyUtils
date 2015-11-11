@@ -1,4 +1,4 @@
-package wangqian.com.myutils;
+package wangqian.com.library;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

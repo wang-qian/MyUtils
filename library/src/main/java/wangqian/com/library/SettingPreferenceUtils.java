@@ -1,4 +1,4 @@
-package wangqian.com.myutils;
+package wangqian.com.library;
 
 import android.app.Activity;
 import android.content.Context;

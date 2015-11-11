@@ -1,4 +1,4 @@
-package wangqian.com.myutils;
+package wangqian.com.library;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -34,11 +34,7 @@ public class FileUtil {
      */
     public static boolean isSdCardOnMounted(){
         String status = Environment.getExternalStorageState();
-        if (status.equals(Environment.MEDIA_MOUNTED)) {
-            return true;
-        } else {
-            return false;
-        }
+        return status.equals(Environment.MEDIA_MOUNTED);
     }
 
     /**

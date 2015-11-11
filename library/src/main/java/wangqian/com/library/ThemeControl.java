@@ -1,4 +1,4 @@
-package wangqian.com.myutils;
+package wangqian.com.library;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,38 +18,6 @@ public class ThemeControl {
         this.mContext = context;
         isChanged(); // invalidate stored booleans
     }
-
-    /**
-     * 当前主题是否改变
-     * @return
-     */
-    public boolean isChanged() {
-        int currentTheme = getTheme();
-        boolean isChange = mCurrentTheme != currentTheme;
-        mCurrentTheme = currentTheme;
-        return isChange;
-    }
-
-    /**
-     * 获取SettingPreference的主题
-     * 在super.onCreate(savedInstanceState); 之前调用
-     * setTheme(themeControl.getTheme());
-     * @param
-     * @return
-     */
-    public int getTheme(){
-        return SettingPreferenceUtils.getTheme(mContext,R.style.AppTheme);
-    }
-
-    /**
-     * 设置主题
-     * themeControl.setTheme(R.style.LightPink);
-     * @param theme
-     */
-    public void setTheme(int theme){
-        SettingPreferenceUtils.setTheme(mContext,theme);
-    }
-
 
     /**
      * 获取主题强调色
@@ -86,7 +54,6 @@ public class ThemeControl {
         return typedValue.data;
     }
 
-
     /**
      * 获取color对应的int值
      * @param context Activity
@@ -96,5 +63,39 @@ public class ThemeControl {
     public static int getColorWarp(Activity context,@ColorRes int color){
         return context.getResources().getColor(color);
 //        return context.getResources().getColor(color,context.getTheme());
+    }
+
+    /**
+     * 当前主题是否改变
+     *
+     * @return
+     */
+    public boolean isChanged() {
+        int currentTheme = getTheme();
+        boolean isChange = mCurrentTheme != currentTheme;
+        mCurrentTheme = currentTheme;
+        return isChange;
+    }
+
+    /**
+     * 获取SettingPreference的主题
+     * 在super.onCreate(savedInstanceState); 之前调用
+     * setTheme(themeControl.getTheme());
+     *
+     * @param
+     * @return
+     */
+    public int getTheme() {
+        return SettingPreferenceUtils.getTheme(mContext, R.style.AppTheme);
+    }
+
+    /**
+     * 设置主题
+     * themeControl.setTheme(R.style.LightPink);
+     *
+     * @param theme
+     */
+    public void setTheme(int theme) {
+        SettingPreferenceUtils.setTheme(mContext, theme);
     }
 }

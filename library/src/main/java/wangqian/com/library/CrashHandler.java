@@ -1,4 +1,4 @@
-package wangqian.com.myutils;
+package wangqian.com.library;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -27,11 +27,10 @@ import java.util.Map;
 public class CrashHandler implements UncaughtExceptionHandler {
 
 	public static final String TAG = "CrashHandler";
-
-	// 系统默认的UncaughtException处理类
-	private UncaughtExceptionHandler mDefaultHandler;
 	// CrashHandler实例
 	private static CrashHandler INSTANCE = new CrashHandler();
+	// 系统默认的UncaughtException处理类
+	private UncaughtExceptionHandler mDefaultHandler;
 	// 程序的Context对象
 	private Context mContext;
 	// 用来存储设备信息和异常信息
