@@ -37,6 +37,26 @@ public class FileUtil {
         return status.equals(Environment.MEDIA_MOUNTED);
     }
 
+
+    /**
+     * 获取系统自带的缓存目录
+     * @param context
+     * @param uniqueName 文件名
+     * @return
+     */
+    public File getDiskCacheDir(Context context, String uniqueName) {
+        String cachePath;
+        //如果sd卡存在并且没有被移除
+        if (Environment.MEDIA_MOUNTED.equals(Environment
+                .getExternalStorageState())
+                || !Environment.isExternalStorageRemovable()) {
+            cachePath = context.getExternalCacheDir().getPath();
+        } else {
+            cachePath = context.getCacheDir().getPath();
+        }
+        return new File(cachePath + File.separator + uniqueName);
+    }
+
     /**
      * 获得sd卡根路径
      * @return
