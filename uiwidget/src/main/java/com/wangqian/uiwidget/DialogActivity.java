@@ -6,7 +6,7 @@ import android.widget.RelativeLayout;
 
 /**
  * WQ on 2015/11/13 15:41
- * wq@jjshome.com
+ * wendell.std@gmail.com
  */
 public class DialogActivity extends AppCompatActivity {
     RelativeLayout rlNoticeContainer;
