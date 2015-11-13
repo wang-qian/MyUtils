@@ -5,9 +5,6 @@
                  android:label="@string/app_name"
                  android:supportsRtl="true"
         >
-    <activity android:name=".DialogActivity"
-        android:screenOrientation="portrait"
-        android:theme="@style/MyDialogStyle"/>
     </application>
 
 </manifest>
