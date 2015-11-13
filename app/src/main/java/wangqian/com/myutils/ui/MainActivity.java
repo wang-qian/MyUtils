@@ -9,6 +9,10 @@ import android.view.View;
 
 import wangqian.com.myutils.R;
 
+/**
+ * WQ on 2015/11/10 14:43
+ * wendell.std@gmail.com
+ */
 public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

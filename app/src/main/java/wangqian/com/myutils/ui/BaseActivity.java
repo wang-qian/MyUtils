@@ -15,7 +15,7 @@ import wangqian.com.myutils.R;
 
 /**
  * WQ on 2015/11/10 14:43
- * wq@jjshome.com
+ * wendell.std@gmail.com
  */
 public abstract class BaseActivity extends AppCompatActivity {
     ThemeControl themeControl;
