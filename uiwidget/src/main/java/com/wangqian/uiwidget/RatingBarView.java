@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
  * https://github.com/xuyisheng/RatingbarGuide
  * 自定义RatingBarView
  * WQ on 2015/11/13 18:50
- * wq@jjshome.com
+ * wendell.std@gmail.com
  */
 public class RatingBarView extends LinearLayout {
 
