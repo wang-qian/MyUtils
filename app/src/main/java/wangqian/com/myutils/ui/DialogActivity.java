@@ -1,8 +1,10 @@
-package com.wangqian.uiwidget;
+package wangqian.com.myutils.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
+
+import wangqian.com.myutils.R;
 
 /**
  * WQ on 2015/11/13 15:41
