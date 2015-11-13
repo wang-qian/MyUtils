@@ -23,6 +23,7 @@ import java.util.Map;
 
 /**
  * 异常捕获的类，在Application 的onCreate中调用init方法
+ * wendell.std@gmail.com
  */
 public class CrashHandler implements UncaughtExceptionHandler {
 

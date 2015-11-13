@@ -18,6 +18,7 @@ import java.text.DecimalFormat;
 
 /**
  * 文件管理类
+ * wendell.std@gmail.com
  */
 public class FileUtil {
     //文件的基本路径

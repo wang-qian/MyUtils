@@ -9,7 +9,7 @@ import android.util.TypedValue;
 /**
  * 主题设置相关的类
  * WQ on 2015/11/9 09:41
- * wq@jjshome.com
+ * wendell.std@gmail.com
  */
 public class ThemeControl {
     private Context mContext;

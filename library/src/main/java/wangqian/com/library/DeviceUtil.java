@@ -10,7 +10,7 @@ import android.view.WindowManager;
 
 /**
  * WQ on 2015/11/10 14:01
- * wq@jjshome.com
+ * wendell.std@gmail.com
  */
 public class DeviceUtil {
 

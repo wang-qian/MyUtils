@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 /**
  * 相关信息的设置Preference
  * WQ on 2015/10/20 09:50
- * wq@jjshome.com
+ * wendell.std@gmail.com
  */
 public class SettingPreferenceUtils {
     public static final String PREFERENCE_NAME = "settingInfo";

@@ -1,13 +1,25 @@
 package wangqian.com.library;
 
 import java.security.MessageDigest;
+import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 字符串处理类
  * WQ on 2015/11/12 13:55
- * wq@jjshome.com
+ * wendell.std@gmail.com
  */
 public class StringUtil {
+
+    private static final String[] SPELL = new String[]{
+            "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
+            "ā","á","ǎ","à","ō","ó","ǒ","ò","ē","é","ě","è","ī","í","ǐ","ì","ū","ú","ǔ","ù","ǖ","ǘ","ǚ","ǜ","ü"
+    };
+    private static char[] chineseParam = new char[]{'」','，','。','？','…','：','～','【','＃','、','％','＊','＆','＄','（','‘','’','“','”','『','〔','｛','【'
+            ,'￥','￡','‖','〖','《','「','》','〗','】','｝','〕','』','”','）','！','；','—'};
+
     /**
      *  获取加密后的字符串
      * @param pwd
@@ -56,4 +68,95 @@ public class StringUtil {
             return null;
         }
     }
+
+    /**
+     * 检测String是否全是中文
+     *
+     */
+    public static boolean isChineseWord( String name ){
+        boolean res=true;
+        char[] cTemp = name.toCharArray( );
+
+        for( int i = 0; i < name.length( ); i++ ){
+            if( !isChinese( cTemp[ i ] ) ){
+                res=false;
+                break;
+            }
+        }
+
+        return res;
+    }
+
+    /**
+     * 是否为英文字母
+     *
+     * */
+    public static boolean isLetter( String inputStr ){
+        char[] inputArray = inputStr.toCharArray( );
+        List<String> spellList = Arrays.asList(SPELL);
+
+        for( char input : inputArray ){
+            if( !spellList.contains( input + "" ) ){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * 判定输入汉字
+     * @param c
+     */
+    public static boolean isChinese( char c ){
+        for( char param : chineseParam ){
+            if( param == c ){
+                return false;
+            }
+        }
+
+        Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
+        if ( ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
+                || ub == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS
+                || ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A
+                || ub == Character.UnicodeBlock.GENERAL_PUNCTUATION
+                || ub == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION
+                || ub == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS ){
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * 字符串是否乱码
+     * @param strName
+     * @return
+     */
+    private static boolean isMessyCode(String strName) {
+        try {
+            Pattern p = Pattern.compile("\\s*|\t*|\r*|\n*");
+            Matcher m = p.matcher(strName);
+            String after = m.replaceAll("");
+            String temp = after.replaceAll("\\p{P}", "");
+            char[] ch = temp.trim().toCharArray();
+
+            int length = (ch != null) ? ch.length : 0;
+            for (int i = 0; i < length; i++) {
+                char c = ch[i];
+                if (!Character.isLetterOrDigit(c)) {
+                    String str = "" + ch[i];
+                    if (!str.matches("[\u4e00-\u9fa5]+")) {
+                        return true;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+
 }
