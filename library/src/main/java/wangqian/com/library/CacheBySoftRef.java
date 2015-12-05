@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  *  图片缓存
  * WQ on 2015/11/19 10:21
- * wq@jjshome.com
+ * wendell.std@gmail.com
  */
 public class CacheBySoftRef {
     private Map<String,SoftReference<Bitmap>> imageCache = new HashMap<>();
